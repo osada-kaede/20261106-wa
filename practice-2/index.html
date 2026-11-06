@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>文字数カウンター</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+  <h2>文字数カウンター</h2>
+
+  <textarea v-model="text" placeholder="文章を入力してください"></textarea>
+
+  <p>文字数：{{ characterCount }}文字</p>
+
+  <button @click="clearText">クリア</button>
+</div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

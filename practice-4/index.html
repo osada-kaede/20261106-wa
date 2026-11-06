@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>成績判定</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+  <div class="app-container">
+    <h1>成績判定</h1>
+
+    <section class="input-panel">
+      <h2>テストの点数</h2>
+      <div class="score-input">
+        <input type="number" v-model.number="score" min="0" max="100">
+        <span>点</span>
+      </div>
+      <input type="range" v-model.number="score" min="0" max="100">
+      <div class="range-label">
+        <span>0点</span>
+        <span>100点</span>
+      </div>
+    </section>
+
+    <section class="result-panel" :class="currentStandard?.color">
+      <div class="result-top">
+        <div>
+          <p class="result-caption">判定結果</p>
+          <p class="grade">{{ grade }}</p>
+        </div>
+        <div class="score-display">
+          <span>{{ score }}</span>
+          <small> / 100点</small>
+        </div>
+      </div>
+
+      <div class="result-message">
+        <strong>{{ status }}</strong>
+        <p>{{ advice }}</p>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-label">
+          <span>得点率</span>
+          <strong>{{ score }}%</strong>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-value" :style="{ width: score + '%' }"></div>
+        </div>
+      </div>
+
+      <p class="difference">{{ differenceMessage }}</p>
+    </section>
+
+    <section class="standards-panel">
+      <h2>評価基準</h2>
+      <div class="standards-list">
+        <div
+          v-for="item in standards"
+          :key="item.grade"
+          class="standard-item"
+          :class="[item.color, { active: currentStandard === item }]"
+        >
+          <span class="standard-grade">{{ item.grade }}</span>
+          <strong>{{ item.range }}</strong>
+          <small>{{ item.status }}</small>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

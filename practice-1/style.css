@@ -1,0 +1,14 @@
+#app {
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+hr {
+  margin: 20px 0;
+}

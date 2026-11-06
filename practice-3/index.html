@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI計算</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+  <div class="app-container">
+    <h1>BMI計算</h1>
+
+    <main>
+      <section class="card">
+        <h2>計算公式</h2>
+        <p class="formula">BMI ＝ 体重(kg) ÷ 身長(m) ÷ 身長(m)</p>
+      </section>
+
+      <section class="card">
+        <h2>身体情報の入力</h2>
+
+        <div class="form-group">
+          <label for="height">身長</label>
+          <div class="input-wrap">
+            <input id="height" type="number" v-model.number="height" min="1">
+            <span>cm</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="weight">体重</label>
+          <div class="input-wrap">
+            <input id="weight" type="number" v-model.number="weight" min="1">
+            <span>kg</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-card">
+        <p class="result-label">YOUR BMI</p>
+        <p class="bmi-value">{{ formattedBmi }}</p>
+        <p class="result-status">{{ result }}</p>
+        <div class="advice">
+          <h2>アドバイス</h2>
+          <p>{{ advice }}</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>BMIの判定基準</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>BMI</th>
+              <th>判定</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="item in standards"
+              :key="item.result"
+              :class="{ active: currentStandard === item }"
+            >
+              <td>{{ item.range }}</td>
+              <td>{{ item.result }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 成人向けのBMI判定基準です。</p>
+      </section>
+    </main>
+  </div>
+</div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

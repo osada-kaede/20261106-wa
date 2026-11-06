@@ -1,0 +1,193 @@
+/*-------------------------
+/*  全体
+-------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f1f4f8;
+  color: #263449;
+}
+
+#app {
+  padding: 40px 20px;
+}
+
+.app-container {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 1em;
+  font-size: 28px;
+  text-align: center;
+}
+
+/*-------------------------
+/*  カード共通
+-------------------------*/
+.card,
+.result-card {
+  margin-bottom: 20px;
+  padding: 24px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 16px rgba(35, 55, 80, 0.06);
+}
+
+.card h2,
+.advice h2 {
+  margin: 0 0 18px;
+  font-size: 17px;
+}
+
+/*  計算公式  */
+
+.formula {
+  margin: 0;
+  padding: 14px;
+  border-radius: 8px;
+  background: #f1f5fb;
+  color: #496b9b;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/*-------------------------
+/*  入力フォーム
+-------------------------*/
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.input-wrap input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dce3ec;
+  border-radius: 8px;
+  outline: none;
+  background: #fafbfd;
+  color: #263449;
+  font-size: 16px;
+}
+
+.input-wrap input:focus {
+  border-color: #6685b5;
+  background: #fff;
+}
+
+.input-wrap span {
+  color: #7b8798;
+  font-size: 14px;
+}
+
+/*-------------------------
+/*  計算結果
+-------------------------*/
+.result-card {
+  padding: 28px 24px;
+  background: #365b91;
+  color: #fff;
+  text-align: center;
+}
+
+.result-label {
+  margin: 0 0 8px;
+  color: #c5d5ec;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.bmi-value {
+  margin: 0;
+  font-size: 48px;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.result-status {
+  display: inline-block;
+  margin: 14px 0 0;
+  padding: 7px 20px;
+  border-radius: 20px;
+  background: #fff;
+  color: #365b91;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.advice {
+  margin-top: 26px;
+  padding: 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.12);
+  text-align: left;
+}
+
+.advice h2 {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.advice p {
+  margin: 0;
+  color: #e0e9f5;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/*-------------------------
+/*  判定基準テーブル
+-------------------------*/
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th,
+td {
+  padding: 12px;
+  border-bottom: 1px solid #e8edf3;
+  text-align: left;
+}
+
+th {
+  background: #f5f7fa;
+  color: #65758b;
+  font-size: 12px;
+}
+
+tbody tr.active {
+  background: #eaf1fb;
+  color: #365b91;
+  font-weight: bold;
+}
+
+.table-note {
+  margin: 12px 0 0;
+  color: #8994a3;
+  font-size: 12px;
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>猫の適正ごはん量チェッカー</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+  <div class="app-container">
+    <h1>猫の適正ごはん量チェッカー</h1>
+
+    <main>
+      <section class="card">
+        <h2>計算公式</h2>
+        <p class="formula">1日の目安(g) ＝ (体重 × 50kcal) ÷ 100gあたりのカロリー × 100</p>
+      </section>
+
+      <section class="card">
+        <h2>情報入力</h2>
+
+        <div class="form-group">
+          <label for="height">猫の体重</label>
+          <div class="input-wrap">
+            <input id="height" type="number" v-model.number="height" min="0.1" step="0.1">
+            <span>kg</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="weight">キャットフードのカロリー（100gあたり）</label>
+          <div class="input-wrap">
+            <input id="weight" type="number" v-model.number="weight" min="1">
+            <span>kcal</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="result-card">
+        <p class="result-label">1日あたりの適正ごはん量</p>
+        <p class="bmi-value">{{ formattedBmi }}</p>
+        <p class="result-status">{{ result }}</p>
+        <div class="advice">
+          <h2>アドバイス</h2>
+          <p>{{ advice }}</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>体重別の目安カロリー一覧</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>体重</th>
+              <th>体型・区分目安</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              v-for="item in standards"
+              :key="item.result"
+              :class="{ active: currentStandard === item }"
+            >
+              <td>{{ item.range }}</td>
+              <td>{{ item.result }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="table-note">※ 成猫（運動量普通・避妊去勢済）の平均的なエネルギー要求量（50kcal/kg）を基準に計算しています。</p>
+      </section>
+    </main>
+  </div>
+</div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

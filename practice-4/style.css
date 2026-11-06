@@ -1,0 +1,277 @@
+/*-------------------------
+/*  全体
+-------------------------*/
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f2f4f8;
+  color: #293548;
+}
+
+#app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 40px);
+}
+
+.app-container {
+  width: 100%;
+  max-width: 620px;
+}
+
+h1 {
+  margin: 0 0 16px;
+  font-size: 26px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+/*-------------------------
+/*  点数入力
+-------------------------*/
+.input-panel {
+  padding: 18px 22px;
+  border: 1px solid #e5e9ef;
+  border-radius: 12px;
+  background: #fff;
+}
+
+.score-input {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+}
+
+.score-input input {
+  width: 110px;
+  padding: 0;
+  border: none;
+  outline: none;
+  color: #365b91;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.score-input span {
+  color: #7b8798;
+  font-size: 14px;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 14px 0 4px;
+  accent-color: #4776b8;
+  cursor: pointer;
+}
+
+.range-label {
+  display: flex;
+  justify-content: space-between;
+  color: #9aa5b4;
+  font-size: 11px;
+}
+
+/*-------------------------
+/*  判定結果
+-------------------------*/
+.result-panel {
+  margin-top: 14px;
+  padding: 20px 22px;
+  border-radius: 12px;
+  background: #365b91;
+  color: #fff;
+  transition: background 0.2s;
+}
+
+.result-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-caption {
+  margin: 0 0 4px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+}
+
+.grade {
+  margin: 0;
+  font-size: 54px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.score-display {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.score-display small {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+}
+
+.result-message {
+  margin-top: 16px;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.result-message strong {
+  font-size: 15px;
+}
+
+.result-message p {
+  margin: 5px 0 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/*  得点率 */
+
+.progress-area {
+  margin-top: 16px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  font-size: 12px;
+}
+
+.progress-bar {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.progress-value {
+  height: 100%;
+  border-radius: 10px;
+  background: #fff;
+  transition: width 0.3s;
+}
+
+.difference {
+  margin: 12px 0 0;
+  font-size: 12px;
+  text-align: right;
+}
+
+/*-------------------------
+/*  成績別カラー
+-------------------------*/
+.result-panel.grade-a {
+  background: #247c67;
+}
+
+.result-panel.grade-b {
+  background: #3678a8;
+}
+
+.result-panel.grade-c {
+  background: #536da8;
+}
+
+.result-panel.grade-d {
+  background: #a87932;
+}
+
+.result-panel.grade-f {
+  background: #a94e52;
+}
+
+/*-------------------------
+/*  評価基準
+-------------------------*/
+.standards-panel {
+  margin-top: 18px;
+}
+
+.standards-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.standard-item {
+  padding: 10px 4px;
+  border: 2px solid transparent;
+  border-radius: 9px;
+  background: #fff;
+  text-align: center;
+  opacity: 0.55;
+}
+
+.standard-item.active {
+  border-color: currentColor;
+  opacity: 1;
+}
+
+.standard-grade {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.standard-item strong,
+.standard-item small {
+  display: block;
+}
+
+.standard-item strong {
+  font-size: 10px;
+}
+
+.standard-item small {
+  margin-top: 4px;
+  font-size: 10px;
+}
+
+/*  評価別の文字色 */
+
+.standard-item.grade-a {
+  color: #247c67;
+}
+
+.standard-item.grade-b {
+  color: #3678a8;
+}
+
+.standard-item.grade-c {
+  color: #536da8;
+}
+
+.standard-item.grade-d {
+  color: #a87932;
+}
+
+.standard-item.grade-f {
+  color: #a94e52;
+}
+
+/*** 画面幅が狭い場合 ***/
+
+@media (max-width: 480px) {
+  body {
+    padding: 14px;
+  }
+
+  .standards-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

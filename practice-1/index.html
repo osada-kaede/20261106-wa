@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>税込価格計算</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <h2>税込価格計算</h2>
+
+    <p>商品価格：{{ price }}円</p>
+    <p>消費税率：{{ taxRate }}%</p>
+
+    <hr>
+
+  <p>税込価格：{{ totalPrice }}円</p>
+</div>
+  
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
